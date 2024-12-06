@@ -54,6 +54,8 @@ h1{
   border: transparent;
   border-radius: 0.1rem;
   padding: 0.3rem;
+  background-image: url(/images/icon-dollar.svg);
+  background-repeat: no-repeat;
 }
 
 .tip-percentage{
