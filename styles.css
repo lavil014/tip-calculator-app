@@ -51,10 +51,10 @@ h1{
 
 
 .input-container input{
-  background-color: var(--Lightgrayishcyan);
+  background-color: var(--Verylightgrayishcyan);
   border: transparent;
   border-radius: 0.1rem;
-  padding: 0.5rem 0.5rem 0.5rem 16.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 19rem;
   background-image: url(/images/icon-dollar.svg);
   background-repeat: no-repeat;
   background-position: 0.5rem center;
@@ -129,4 +129,47 @@ h1{
 .amounts :nth-child(2){
   color: var(--Strongcyan);
   font-size: 0.9rem;
+}
+
+
+@media (width > 375px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+  }
+
+  .main-container{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-radius: 0.6rem;
+    padding: 1rem 3rem;
+  }
+
+  .tip-information{
+    margin-left: -2rem;
+  }
+
+  .tip-percentage ul{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tip-percentage ul li button{
+   min-width: 7.8rem;
+   min-height: 2rem;
+  }
+
+  .display-tip{
+    line-height: 0.9;
+  }
+  .display-tip button{
+    margin-top: 3rem;
+  }
+
+  .amounts :nth-child(2){
+    color: var(--Strongcyan);
+    font-size: 1.5rem;
+  }
 }
