@@ -49,14 +49,23 @@ h1{
   gap: 0.2rem;
 }
 
+
 .input-container input{
   background-color: var(--Lightgrayishcyan);
   border: transparent;
   border-radius: 0.1rem;
-  padding: 0.3rem;
+  padding: 0.5rem 0.5rem 0.5rem 16.5rem;
   background-image: url(/images/icon-dollar.svg);
   background-repeat: no-repeat;
+  background-position: 0.5rem center;
+  outline: none;
+  background-size: 0.6rem;
 }
+
+.input-container .user-icon{
+  background-image: url(/images/icon-person.svg);
+}
+
 
 .tip-percentage{
   display: flex;
