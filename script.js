@@ -1,4 +1,39 @@
-const bill = 305.57;
+const billInput = document.getElementById('bill-input');
+const customInput = document.getElementById('custom-input');
+const peopleInput = document.getElementById('custom-input');
+
+
+
+console.log(billInput);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const bill = 305.57;
 const tipPercentage = [5, 10, 15, 25, 50,3.5];
 const numberofPeople = 5;
 
@@ -21,4 +56,4 @@ const calculateTip = ()=>{
   }
 }
 
-console.log(calculateTip())
+console.log(calculateTip())*/

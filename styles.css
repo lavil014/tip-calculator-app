@@ -62,6 +62,10 @@ h1{
   background-size: 0.6rem;
 }
 
+input[type='number']::-webkit-outer-spin-button, input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+
 .input-container .user-icon{
   background-image: url(/images/icon-person.svg);
 }
@@ -81,6 +85,10 @@ h1{
   text-align: center;
 }
 
+button{
+  cursor: pointer;
+}
+
 .tip-percentage ul li button{
   min-width: 9rem;
   min-height: 1.8rem;
@@ -90,6 +98,20 @@ h1{
   border: transparent;
   border-radius: 0.3rem;
 }
+
+.custom{
+ max-width: 8.9rem;
+ max-height: 1.8rem;
+ background-color: var(--Verydarkcyan);  
+ border-radius: 0.3rem; 
+ border: transparent;
+ color: var(--White);
+ padding: 0.5rem;
+ text-align: center;
+ font-weight: 500;
+ font-size: 1rem;
+}
+
 
 .tip-percentage ul li button:hover{
   background-color: var(--Strongcyan);
@@ -148,6 +170,11 @@ h1{
     padding: 1rem 3rem;
   }
 
+  .input-container input{
+    padding: 0.5rem 0.5rem 0.5rem 15rem;
+    text-align: end;
+  }
+
   .tip-information{
     margin-left: -2rem;
   }
@@ -159,6 +186,11 @@ h1{
   .tip-percentage ul li button{
    min-width: 7.8rem;
    min-height: 2rem;
+  }
+
+  .custom{
+   max-width: 8rem;
+   max-height: 2rem;
   }
 
   .display-tip{
