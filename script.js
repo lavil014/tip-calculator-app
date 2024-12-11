@@ -1,13 +1,28 @@
-const billInput = document.getElementById('bill-input');
-const customInput = document.getElementById('custom-input');
-const peopleInput = document.getElementById('custom-input');
+const inputs = document.querySelectorAll('input');
+const resetBtn = document.getElementById('reset-btn');
 
 
 
-console.log(billInput);
+
+inputs.forEach((index, indexValue)=>{
 
 
+  index.addEventListener('change',()=>{
 
+   
+
+    let bill = inputs[0].value;
+    let custom = inputs[1].value;
+    let people = inputs[2].value;
+
+    /* I need to calculate my tip amount and total per person*/
+
+    console.log(bill / people);
+
+  })
+
+
+})
 
 
 
