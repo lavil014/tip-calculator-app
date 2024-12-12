@@ -14,10 +14,16 @@ inputs.forEach((index, indexValue)=>{
     let bill = inputs[0].value;
     let custom = inputs[1].value;
     let people = inputs[2].value;
+    let percentage = custom / 100;
+    let tipAmount = bill * percentage;
+    let totalperPerson = ((bill + tipAmount) / people);
+
 
     /* I need to calculate my tip amount and total per person*/
 
-    console.log(bill / people);
+    console.log(tipAmount)
+    console.log(totalperPerson)
+    
 
   })
 
@@ -25,37 +31,9 @@ inputs.forEach((index, indexValue)=>{
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*const bill = 305.57;
 const tipPercentage = [5, 10, 15, 25, 50,3.5];
 const numberofPeople = 5;
-
-
-
-
-
 
 const calculateTip = ()=>{
   let percentage = (tipPercentage[5] / 100);
