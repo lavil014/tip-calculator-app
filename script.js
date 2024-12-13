@@ -1,29 +1,34 @@
 const inputs = document.querySelectorAll('input');
 const resetBtn = document.getElementById('reset-btn');
+let tip = document.getElementById('tip-per-person');
+let amount = document.getElementById('amount-per-person');
+
+tip.innerText = 0;
+amount.innerText = 0;
+
+inputs.forEach((index)=>{
 
 
-
-
-inputs.forEach((index, indexValue)=>{
-
-
-  index.addEventListener('change',()=>{
+  index.addEventListener('input',()=>{
 
    
 
-    let bill = inputs[0].value;
-    let custom = inputs[1].value;
-    let people = inputs[2].value;
-    let percentage = custom / 100;
-    let tipAmount = bill * percentage;
-    let totalperPerson = ((bill + tipAmount) / people);
-
-
-    /* I need to calculate my tip amount and total per person*/
-
-    console.log(tipAmount)
-    console.log(totalperPerson)
+    let bill = parseFloat(inputs[0].value);
+    let custom = parseFloat(inputs[1].value);
+    let people = parseInt(inputs[2].value);
     
+    
+    
+    let percentage = custom / 100;
+    let tipAmount = percentage * bill;
+    let totalBill = bill + tipAmount;
+    let tipperPerson = tipAmount / people;
+    let totalperPerson = totalBill / people; 
+
+
+    tip.innerText = tipperPerson.toFixed(2);
+    amount.innerText = totalperPerson.toFixed(2);
+
 
   })
 
