@@ -3,16 +3,29 @@ const percentageBtns = document.querySelectorAll('.percentage-btn');
 const resetBtn = document.getElementById('reset-btn');
 let tip = document.getElementById('tip-per-person');
 let amount = document.getElementById('amount-per-person');
+let tipPercentage = 0;
 
 tip.innerText = 0.00;
 amount.innerText = 0.00;
 
-
+/*
 const calculateTip = ()=>{
   
   let bill = parseFloat(inputs[0].value);
   let custom = parseFloat(inputs[1].value);
   let people = parseInt(inputs[2].value);
+  let selectedTipPercentage = 0;
+
+  percentageBtns.forEach((btn)=>{
+
+    btn.addEventListener('click',(e)=>{
+      selectedTipPercentage = e.target.innerText.replace('%','');
+
+      console.log(selectedTipPercentage);
+    })
+ 
+
+  })
   
   if(isNaN(bill) || isNaN(custom) || isNaN(people) || people <= 0){
     tip.innerText = 0.00;
@@ -26,6 +39,7 @@ const calculateTip = ()=>{
   let totalBill = bill + tipAmount;
   let tipperPerson = tipAmount / people;
   let totalperPerson = totalBill / people; 
+  
 
 
   tip.innerText = tipperPerson.toFixed(2);
@@ -47,20 +61,25 @@ inputs.forEach((input)=>{
 
 resetBtn.addEventListener('click', resetCalculator);
 
+*/
+
 percentageBtns.forEach((btn)=>{
 
   btn.addEventListener('click',(e)=>{
 
-    const tipPercentage = e.target.innerText.replace('%','');
+    tipPercentage = parseFloat(e.target.innerText.replace('%','')) / 100;
 
-    console.log(tipPercentage);
+  
   })
 })
 
+const calculateTip = (billAmount) =>{
+  const tip = billAmount * tipPercentage;
 
+  return tip
+}
 
-
-
+calculateTip(565)
 
 
 
