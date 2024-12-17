@@ -50,7 +50,10 @@ resetBtn.addEventListener('click', resetCalculator);
 percentageBtns.forEach((btn)=>{
 
   btn.addEventListener('click',(e)=>{
-    console.log(e.target.innerText);
+
+    const tipPercentage = e.target.innerText.replace('%','');
+
+    console.log(tipPercentage);
   })
 })
 
