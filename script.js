@@ -96,6 +96,7 @@ calculateTip(565)
 
 
 
+
 /*const bill = 305.57;
 const tipPercentage = [5, 10, 15, 25, 50,3.5];
 const numberofPeople = 5;
