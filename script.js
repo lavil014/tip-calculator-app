@@ -3,6 +3,7 @@ const percentageBtns = document.querySelectorAll('.percentage-btn');
 const resetBtn = document.getElementById('reset-btn');
 let tip = document.getElementById('tip-per-person');
 let amount = document.getElementById('amount-per-person');
+let customInput = document.getElementById('custom-input');
 let tipPercentage = 0;
 
 tip.innerText = 0.00;
@@ -69,17 +70,34 @@ percentageBtns.forEach((btn)=>{
 
     tipPercentage = parseFloat(e.target.innerText.replace('%','')) / 100;
 
-  
+    if(isNaN(tipPercentage)){
+      tipPercentage = '';
+    }
+
+    
+    console.log(tipPercentage);
   })
 })
 
+customInput.addEventListener('change',(e)=>{
+
+  tipPercentage = parseFloat(e.target.value) / 100;
+
+  console.log(tipPercentage)
+
+  e.target.value = ''
+})
+
+
+console.log(tipPercentage);
+
 const calculateTip = (billAmount) =>{
   const tip = billAmount * tipPercentage;
-
-  return tip
+  
+  console.log(tip);
 }
 
-calculateTip(565)
+calculateTip(565) /*I need to update this function to capture my data*/ 
 
 
 
