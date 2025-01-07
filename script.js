@@ -6,131 +6,64 @@ let amount = document.getElementById('amount-per-person');
 let customInput = document.getElementById('custom-input');
 let tipPercentage = 0;
 
+
+/* Reset values to 0 */
 tip.innerText = 0.00;
 amount.innerText = 0.00;
 
-/*
+
 const calculateTip = ()=>{
   
-  let bill = parseFloat(inputs[0].value);
-  let custom = parseFloat(inputs[1].value);
-  let people = parseInt(inputs[2].value);
-  let selectedTipPercentage = 0;
+const bill = parseFloat(document.getElementById('bill-input').value);
+const people = parseInt(document.getElementById('people-input').value);
 
-  percentageBtns.forEach((btn)=>{
 
-    btn.addEventListener('click',(e)=>{
-      selectedTipPercentage = e.target.innerText.replace('%','');
+  if(people <= 0){
+    alert('Number of people must be greater than 0')
 
-      console.log(selectedTipPercentage);
-    })
- 
-
-  })
-  
-  if(isNaN(bill) || isNaN(custom) || isNaN(people) || people <= 0){
-    tip.innerText = 0.00;
-    amount.innerText = 0.00; 
-
-    return
+    return;
   }
-  
-  let percentage = custom / 100;
-  let tipAmount = percentage * bill;
+
+  let tipAmount = bill * tipPercentage;
   let totalBill = bill + tipAmount;
+
   let tipperPerson = tipAmount / people;
   let totalperPerson = totalBill / people; 
-  
-
 
   tip.innerText = tipperPerson.toFixed(2);
   amount.innerText = totalperPerson.toFixed(2);
+    
+
 }
-
-const resetCalculator = ()=>{
-  inputs.forEach(input =>{
-    input.value = '';
-  })
-  tip.innerText = 0.00;
-  amount.innerText = 0.00;
-}
-
-inputs.forEach((input)=>{
-
-  input.addEventListener('input', calculateTip)
-})
-
-resetBtn.addEventListener('click', resetCalculator);
-
-*/
 
 percentageBtns.forEach((btn)=>{
 
   btn.addEventListener('click',(e)=>{
+    tipPercentage = parseFloat(e.target.innerText.replace('%','')) /100;
+    customInput.value = '';
 
-    tipPercentage = parseFloat(e.target.innerText.replace('%','')) / 100;
-
-    if(isNaN(tipPercentage)){
-      tipPercentage = '';
-    }
-
-    
-    console.log(tipPercentage);
+    calculateTip();
   })
+
+
 })
 
-customInput.addEventListener('change',(e)=>{
-
+customInput.addEventListener('input', (e)=>{
   tipPercentage = parseFloat(e.target.value) / 100;
-
-  console.log(tipPercentage)
-
-  e.target.value = ''
+  calculateTip();
 })
 
-
-console.log(tipPercentage);
-
-const calculateTip = (billAmount) =>{
-  const tip = billAmount * tipPercentage;
-  
-  console.log(tip);
+const resetCalculator = ()=>{
+  inputs.forEach((input) =>{
+    input.value = '';
+    tip.innerText = 0.00;
+    amount.innerText = 0.00;
+    tipPercentage = 0;
+  })
 }
 
-calculateTip(565) /*I need to update this function to capture my data*/ 
+resetBtn.addEventListener('click', resetCalculator);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*const bill = 305.57;
-const tipPercentage = [5, 10, 15, 25, 50,3.5];
-const numberofPeople = 5;
-
-const calculateTip = ()=>{
-  let percentage = (tipPercentage[5] / 100);
-  let tipAmount = bill * percentage;
-  let totalperPerson = (bill + tipAmount) / numberofPeople;
-
-  console.log(tipAmount);
-  
-  
-  return {
-    tipAmount: tipAmount.toFixed(2),
-    totalperPerson: totalperPerson.toFixed(2)
-  }
-}
-
-console.log(calculateTip())*/
+inputs.forEach((input)=>{
+  input.addEventListener('input', calculateTip);
+})
