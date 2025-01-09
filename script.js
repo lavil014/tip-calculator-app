@@ -30,6 +30,14 @@ const people = parseInt(document.getElementById('people-input').value);
   let tipperPerson = tipAmount / people;
   let totalperPerson = totalBill / people; 
 
+  if(isNaN(bill) || isNaN(people) || bill <= 0){
+    tip.innerText = 0.00;
+    amount.innerText = 0.00; 
+
+    return
+  }
+
+
   tip.innerText = tipperPerson.toFixed(2);
   amount.innerText = totalperPerson.toFixed(2);
     
