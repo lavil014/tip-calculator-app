@@ -155,7 +155,7 @@ button{
 }
 
 
-@media (width > 426px) {
+@media (width > 475px) {
   body{
     display: flex;
     flex-direction: column;
